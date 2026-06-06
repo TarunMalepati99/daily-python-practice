@@ -1,7 +1,13 @@
+#!/usr/bin/env python3
+"""Daily Python practice script."""
+
 from datetime import datetime
 
-filename = 'example.txt'
+# Get current date
+current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-with open(filename, 'a') as f:
-    now = datetime.now()
-    f.write(f'Today is {now.strftime("%Y-%m-%d")}\n')
+# Write to example.txt
+with open('example.txt', 'a') as f:
+    f.write(f"Daily practice executed at: {current_date}\n")
+
+print(f"Daily practice script executed at {current_date}")
