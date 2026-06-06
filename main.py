@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
-"""Daily Python practice script."""
+"""
+Daily Python Practice Script
+This script runs daily as part of the GitHub Actions workflow.
+"""
 
-from datetime import datetime
+import datetime
 
-# Get current date
-current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+def main():
+    """Main function for daily practice."""
+    print("Daily Python Practice")
+    print(f"Timestamp: {datetime.datetime.now()}")
+    
+    # Write to example.txt
+    with open("example.txt", "w") as f:
+        f.write(f"Last updated: {datetime.datetime.now()}\n")
+    
+    print("Completed daily practice!")
 
-# Write to example.txt
-with open('example.txt', 'a') as f:
-    f.write(f"Daily practice executed at: {current_date}\n")
-
-print(f"Daily practice script executed at {current_date}")
+if __name__ == "__main__":
+    main()
